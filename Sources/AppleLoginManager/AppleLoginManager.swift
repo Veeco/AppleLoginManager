@@ -1,6 +1,6 @@
 //
 //  AppleLoginManager.swift
-//  Interactipie
+//  AppleLoginManager
 //
 //  Created by Interactipie Team.
 //
@@ -37,7 +37,7 @@ enum AppleLoginError: Error {
     }
 }
 
-class AppleLoginManager: NSObject {
+public class AppleLoginManager: NSObject {
     
     private static let shared = AppleLoginManager()
     
@@ -50,7 +50,7 @@ class AppleLoginManager: NSObject {
     
     // MARK: - Public Methods
     
-    static func signInWithApple(completion: @escaping (Result<AppleLoginResult, Error>) -> Void) {
+    public static func signInWithApple(completion: @escaping (Result<AppleLoginResult, Error>) -> Void) {
         let instance = AppleLoginManager.shared
         
         // 检查是否已有请求在进行中

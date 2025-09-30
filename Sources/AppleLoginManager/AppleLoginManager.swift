@@ -8,7 +8,7 @@
 import Foundation
 import AuthenticationServices
 
-struct AppleLoginResult {
+public struct AppleLoginResult {
     let userIdentifier: String
     let email: String?
     let fullName: PersonNameComponents?
@@ -17,7 +17,7 @@ struct AppleLoginResult {
     let state: String?
 }
 
-enum AppleLoginError: Error {
+public enum AppleLoginError: Error {
     case invalidCredential
     case noIdentityToken
     case tokenSerializationFailed

@@ -9,12 +9,12 @@ import Foundation
 import AuthenticationServices
 
 public struct AppleLoginResult {
-    let userIdentifier: String
-    let email: String?
-    let fullName: PersonNameComponents?
-    let identityToken: String?
-    let authorizationCode: String?
-    let state: String?
+    public let userIdentifier: String
+    public let email: String?
+    public let fullName: PersonNameComponents?
+    public let identityToken: String?
+    public let authorizationCode: String?
+    public let state: String?
 }
 
 public enum AppleLoginError: Error {

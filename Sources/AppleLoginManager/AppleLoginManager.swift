@@ -77,7 +77,7 @@ public class AppleLoginManager: NSObject {
 
 extension AppleLoginManager: ASAuthorizationControllerDelegate {
     
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         defer {
             isRequestInProgress = false
             completionCallback = nil
@@ -122,7 +122,7 @@ extension AppleLoginManager: ASAuthorizationControllerDelegate {
         completion(.success(result))
     }
     
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         defer {
             isRequestInProgress = false
             completionCallback = nil
@@ -135,7 +135,7 @@ extension AppleLoginManager: ASAuthorizationControllerDelegate {
 // MARK: - ASAuthorizationControllerPresentationContextProviding
 
 extension AppleLoginManager: ASAuthorizationControllerPresentationContextProviding {
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+    public func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
 #if os(macOS)
         typealias Application = NSApplication
 #else
